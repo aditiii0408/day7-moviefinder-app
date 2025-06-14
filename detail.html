@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Details</title>
+  <link rel="stylesheet" href="mystyle.css" />
+  <link rel="icon" href="icon.ico" > </link>
+  <script src="myscript.js" defer></script>
+
+</head>
+<body>
+  <h1> Movie Details</h1>
+  <a href="index.html"> Back to Home</a>
+  <br/><br/>
+
+  <h2 id="title"></h2>
+  <h2 id="year"></h2>
+  <h2 id="genre"></h2>
+  <h2 id="director"></h2>
+  <h2 id="writer"></h2>
+  <h2 id="actors"></h2>
+  <h2 id="plot"></h2>
+  <h2 id="language"></h2>
+  <h2 id="awards"></h2>
+
+  <script>
+    let title = localStorage.getItem("title");
+
+    if (!title) {
+      document.body.innerHTML = "<h2>Please search for a movie first. Redirecting to home...</h2>";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    } else {
+      document.getElementById("title").innerText = "Title: " + title;
+      document.getElementById("year").innerText = "Year: " + localStorage.getItem("year");
+      document.getElementById("genre").innerText = "Genre: " + localStorage.getItem("genre");
+      document.getElementById("director").innerText = "Director: " + localStorage.getItem("director");
+      document.getElementById("writer").innerText = "Writer: " + localStorage.getItem("writer");
+      document.getElementById("actors").innerText = "Actors: " + localStorage.getItem("actors");
+      document.getElementById("plot").innerText = "Plot: " + localStorage.getItem("plot");
+      document.getElementById("language").innerText = "Language: " + localStorage.getItem("language");
+      document.getElementById("awards").innerText = "Awards: " + localStorage.getItem("awards");
+    }
+  </script>
+</body>
+</html>
