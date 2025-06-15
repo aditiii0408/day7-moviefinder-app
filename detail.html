@@ -12,6 +12,7 @@
   <a href="index.html"> Back to Home</a>
   <br/><br/>
 
+  <h2 id="msg"></h2>
   <h2 id="title"></h2>
   <h2 id="year"></h2>
   <h2 id="genre"></h2>
@@ -24,10 +25,11 @@
 
   <script>
     let title = localStorage.getItem("title");
+    let msg = document.getElementById("msg");
 
     if (!title) {
-      document.body.innerHTML = "<h2>Please search for a movie first. Redirecting to home...</h2>";
-      setTimeout(() => {
+     msg.innerHTML = "Please search for a movie first. Redirecting to home...";
+      setInterval(() => {
         window.location.href = "index.html";
       }, 3000);
     } else {
